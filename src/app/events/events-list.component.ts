@@ -4,25 +4,14 @@ import { Component, OnInit } from '@angular/core';
   selector: 'events-list',
   template: `
   <div>
-    <h1>Upcoming Angular Events</h1>
-    <hr>
-    <div class="well hoverwell thumbnail">
-      <h2>{{event.name}}</h2>
-      <div> Date: {{event.date}}</div>
-      <div> Time: {{event.time}}</div>
-      <div> Price: \${{event.registration}}</div>
-    </div>
+      <h1>Upcoming Competitions</h1>
+      <event-thumbnail
+      [event] = "event1" ></event-thumbnail>
   </div>
   `
 })
-export class EventsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-  event = {
+export class EventsListComponent {
+  event1 = {
     id: 1,
     name: 'Jiu Jitsu World Championship',
     date: '1/1/2020',
@@ -31,7 +20,7 @@ export class EventsComponent implements OnInit {
     imageUrl: '',
     location:{
       address: ' 555 example road',
-      city: 'London',
+      city: 'Long Beach',
       country: "United States"
     }
 
