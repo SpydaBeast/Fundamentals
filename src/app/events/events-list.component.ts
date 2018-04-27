@@ -53,11 +53,6 @@ export class EventsListComponent {
       time: '10:00 am',
       Registration: 599.99,
       imageUrl: '/assets/images/angularconnect-shield.png',
-      location: {
-        address: '1057 DT',
-        city: 'Las Vegas',
-        country: 'United States'
-      }
     },
     {
       id: 4,
