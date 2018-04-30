@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from '../event.service';
 
+//Lets typescript know that toastr variable is declared some where in scope.
+declare let toastr
+
 @Component({
   selector: 'events-list',
   template: `
@@ -8,7 +11,7 @@ import { EventService } from '../event.service';
       <h1>Upcoming Competitions</h1>
       <div class="row">
         <div *ngFor="let event of events" class="col-md-5">
-          <event-thumbnail [event] ="event" ></event-thumbnail>
+          <event-thumbnail (click)="handleThumbnailClick(event.name)" [event]="event" ></event-thumbnail>
         </div>
       </div>
   </div>
@@ -31,5 +34,9 @@ export class EventsListComponent implements OnInit {
 
   ngOnInit() {
     this.events = this.eventService.getEvents()
+  }
+
+  handleThumbnailClick(eventName){
+    toastr.success(eventName)
   }
 }
