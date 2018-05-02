@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from '../event.service';
+import { ToastrService } from '../common/toastr.service';
 
 //Lets typescript know that toastr variable is declared some where in scope.
 declare let toastr
@@ -27,7 +28,7 @@ declare let toastr
 export class EventsListComponent implements OnInit {
   //Injects the EventService into this component
   events: any[]
-  constructor(private eventService: EventService){
+  constructor(private eventService: EventService, private toastr: ToastrService){
     //Not a good idea to put pontenially long running services in cotructor
     //this.events = this.eventService.getEvents()
   }
@@ -37,6 +38,7 @@ export class EventsListComponent implements OnInit {
   }
 
   handleThumbnailClick(eventName){
-    toastr.success(eventName)
+    //this is an injected toastr service
+    this.toastr.success(eventName)
   }
 }
