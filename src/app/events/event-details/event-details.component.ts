@@ -6,10 +6,11 @@ import { NgModule } from '@angular/core';
   styleUrls: ['./event-details.component.css']
 })
 export class EventDetailsComponent implements OnInit {
-
-  constructor() { }
+  event:any
+  constructor( private eventService: EventService) { }
 
   ngOnInit() {
+    this.event = this.eventService.getEvent(1)
   }
 
 }
