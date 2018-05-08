@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { EventService } from '../event.service';
-import { ToastrService } from '../common/toastr.service';
+import { Component, OnInit, NgModule } from '@angular/core';
+import { EventService } from '../../event.service';
+import { ToastrService } from '../../common/toastr.service';
 
 //Lets typescript know that toastr variable is declared some where in scope.
 declare let toastr
