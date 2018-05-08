@@ -5,6 +5,11 @@ export class EventService {
 
 constructor() { }
 
+//This function takes in and ID or type number
+getEvent(id:number){
+  return EVENTS.find(event => event.id === id)
+}
+
 //This method calls to server to get data
 getEvents(){
     return EVENTS
