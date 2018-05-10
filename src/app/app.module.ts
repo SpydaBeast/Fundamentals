@@ -10,6 +10,8 @@ import { ToastrService } from './common/toastr.service';
 import { EventDetailsComponent } from './events/event-details/event-details.component'
 import { appRoutes } from './app.routes'
 import { RouterModule, Routes } from '@angular/router'
+import { CreateEventComponent } from './events/create-event/create-event.component'
+
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { RouterModule, Routes } from '@angular/router'
     EventThumbnailComponent, 
     NavComponent,
     EventDetailsComponent,
+    CreateEventComponent
 ],
   imports: [
     BrowserModule,
