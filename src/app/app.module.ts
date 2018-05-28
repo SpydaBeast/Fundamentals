@@ -13,6 +13,11 @@ import { RouterModule, Routes } from '@angular/router'
 import { CreateEventComponent } from './events/create-event/create-event.component'
 import { Errors404Component } from './errors/404/404.component'
 import { EventRouteActivator } from './events/event-details/event-route-activator.service'
+import { HttpModule } from '@angular/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,13 @@ import { EventRouteActivator } from './events/event-details/event-route-activato
 ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    MatButtonModule, 
+    MatCheckboxModule,
+    MatToolbarModule
   ],
   providers: [EventService, ToastrService, EventRouteActivator],
   bootstrap: [EventsAppComponent]

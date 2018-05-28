@@ -4,6 +4,7 @@ import { EventDetailsComponent } from './events/event-details/event-details.comp
 import { CreateEventComponent } from './events/create-event/create-event.component';
 import { Errors404Component } from './errors/404/404.component';
 import { EventRouteActivator } from './events/event-details/event-route-activator.service';
+import { ModuleWithProviders } from '@angular/core';
 
 export const appRoutes: Routes = [
   { path: 'events/new', component: CreateEventComponent },
@@ -12,3 +13,7 @@ export const appRoutes: Routes = [
   { path: '404', component: Errors404Component },
   { path: '', redirectTo: '/events', pathMatch: 'full' }
 ];
+
+
+
+export const  routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

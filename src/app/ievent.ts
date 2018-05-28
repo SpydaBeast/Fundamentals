@@ -4,7 +4,7 @@ export interface Ievent {
         name: string,
         date: string,
         time: string,
-        Registration: number,
+        registration: number,
         imageUrl: string,
         location: {
           address: string,
